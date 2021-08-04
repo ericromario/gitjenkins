@@ -1,0 +1,12 @@
+node {
+ stage('GIT') {
+   git branch: 'main', url: 'https://github.com/ericromario/gitjenkins.git'
+   
+}
+stage('RUN') {
+   sh '''javac Main.java'''
+}
+stage('TEST') {
+   sh '''java Main'''
+}
+}
